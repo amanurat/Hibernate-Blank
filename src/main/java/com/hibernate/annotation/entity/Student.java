@@ -3,6 +3,7 @@ package com.hibernate.annotation.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ import java.util.Set;
  * Date: 4/7/2014
  * Time: 3:32 PM
  */
-public class Student {
+public class Student implements Serializable {
 
     private Long id;
 
