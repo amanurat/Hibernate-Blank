@@ -18,7 +18,7 @@ public class StudentJDBCTest {
 
 	// Database credentials
 	static final String USER = "root";
-	static final String PASS = "";
+	static final String PASS = "root";
 
 	public static void main(String[] args) {
 
@@ -92,7 +92,7 @@ public class StudentJDBCTest {
 
 		for (Student student : studentEntitiesList) {
 
-			System.out.println(" name : "+ student.getName() + " email : "+ student.getEmail());
+			System.out.println(" name : "+ student.getName() + " , email : "+ student.getEmail());
 
 		}
 
