@@ -1,5 +1,7 @@
 package com.hibernate.annotation.entity;
 
+import com.hibernate.annotation.view.EmployeeView;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
