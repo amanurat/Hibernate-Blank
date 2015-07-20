@@ -3,8 +3,6 @@ package com.hibernate.annotation.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "EMPLOYEE")
@@ -24,14 +22,6 @@ public class Employee implements Serializable {
     @ManyToOne
     @JoinColumn(name = "DEPARTMENT_ID")
     private Department department;
-
-
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "EMPLOYEE_MEETING",
-                joinColumns = { @JoinColumn(name = "EMPLOYEE_ID") },
-                inverseJoinColumns = { @JoinColumn(name = "MEETING_ID")}
-    )
-    private Set<Meeting> meetings = new HashSet<Meeting>();
 
 
     @Column(name = "FIRST_NAME", nullable = false)
@@ -68,11 +58,12 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(String firstName,String lastName) {
+    public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    public Employee(String firstName,String lastName, Department department) {
+
+    public Employee(String firstName, String lastName, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
@@ -174,11 +165,4 @@ public class Employee implements Serializable {
         this.updateDateTime = updateDateTime;
     }
 
-    public Set<Meeting> getMeetings() {
-        return meetings;
-    }
-
-    public void setMeetings(Set<Meeting> meetings) {
-        this.meetings = meetings;
-    }
 }
